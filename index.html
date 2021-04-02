@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav Bar Responsive</title>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav id="header">
+        <div class="header_container">
+            <input type="checkbox" name="" id="burger">
+            <label class="menu" for="burger">
+                <img src="burger.svg" alt="burger"> 
+            </label>
+            <div class="logo_container">
+                <h1>cmd</h1>
+            </div>
+            <ul class="navigation">
+                <a href=""><li class="">About Bit</li></a>
+                <a href=""><li class="">Contact</li></a>
+                <a href=""><li class="">Sign up</li></a>
+                <a href=""><li class="">Sign in</li></a>
+            </ul>
+
+            <!--<div class="centre"><h1>Hellow</h1></div>-->
+        
+        </div>
+    </nav>
+
+    <!-- Body contains this code -->
+    <div class="container">
+        <div class="code html">
+            <h2>html</h2>
+            <p>
+                &lt;body&gt; <br>
+                    &lt;nav id="header"&gt;<br>
+                        &lt;div class="header_container"&gt;<br>
+                            &lt;input type="checkbox" name="" id="burger"&gt;<br>
+                            &lt;label class="menu" for="burger"&gt;<br>
+                                &lt;img src="burger.svg" alt="burger"&gt; <br>
+                            &lt;/label&gt;<br>
+                            &lt;div class="logo_container"&gt;<br>
+                                &lt;h1&gt;cmd&lt;/h1&gt;<br>
+                            &lt;/div&gt;<br>
+                            &lt;ul class="navigation"&gt;<br>
+                                &lt;a href=""&gt;&lt;li class=""&gt;About Bit&lt;/li&gt;&lt;/a&gt;<br>
+                                &lt;a href=""&gt;&lt;li class=""&gt;Contact&lt;/li&gt;&lt;/a&gt;<br>
+                                &lt;a href=""&gt;&lt;li class=""&gt;Sign up&lt;/li&gt;&lt;/a&gt;<br>
+                                &lt;a href=""&gt;&lt;li class=""&gt;Sign in&lt;/li&gt;&lt;/a&gt;<br>
+                            &lt;/ul&gt;<br>
+                        &lt;/div&gt;<br>
+                    &lt;/nav&gt;<br>
+                
+                    &lt;div class="container"&gt;<br>
+                        &lt;div class="code html"&gt;<br>
+                            &lt;h2&gt;html&lt;/h2&gt;<br>
+                            &lt;p&gt;&lt;/p&gt;<br>
+                        &lt;/div&gt;<br>
+                    &lt;/div&gt;<br>
+                &lt;/body&gt;
+            </p>
+        </div>
+        <div class="code css">
+            <h2>css</h2>
+            <p>
+                * 
+                {
+                    margin: 0;
+                    padding: 0;
+                    text-decoration: none;
+                    list-style: none;
+                }
+                body
+                {
+                    background-color: rgb(172, 172, 172);
+                }
+                
+                /* Header : our nav bar propreties*/
+                #header
+                {
+                    width: 100vw;
+                    height: 9vh;
+                    display: block;
+                    background-color: #303030;
+                }
+                
+                /*container of all header components*/
+                .header_container
+                {
+                    width: 80vw;
+                    height: 100%;
+                    display: block;
+                    margin: 0 auto;
+                }
+                
+                /* Logo and logo manipulation*/
+                .logo_container{
+                    height: 100%;
+                    display: table;
+                    float: left;
+                }
+                .logo_container h1{
+                    text-transform: uppercase;
+                    color: springgreen;
+                    height: 100%;
+                    display: table-cell;
+                    vertical-align: middle;
+                    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                    font-size: 3em;
+                    /* Shadow and shadow animation*/
+                    text-shadow: 0 0 2px rgba(0, 255, 127, 0.3);
+                    transition: 0.5s text-shadow;
+                }
+                /*shadow animation for the logo*/
+                #header:hover .logo_container h1
+                {
+                    text-shadow: 0 5px 8px rgba(0, 255, 127, 0.6);
+                }
+                
+                /* Navigation options*/
+                .navigation
+                {
+                    float: right;
+                    height: 100%;
+                }
+                .navigation a
+                {
+                    height: 100%;
+                    display: table;
+                    float: left;
+                    padding: 0 20px;
+                    color: white;
+                }
+                .navigation a li 
+                {
+                    display: table-cell;
+                    vertical-align: middle;
+                    font-family: monospace;
+                    font-weight: bolder;
+                    font-size: 1.4em;
+                    color: inherit;
+                }
+                .navigation a:hover{
+                    color: springgreen;
+                    background: #202020;
+                }
+                
+                
+                /* Burger and responsive*/
+                #burger
+                {
+                    display: none;
+                }
+                .menu{
+                    float: right;
+                    height: 100%;
+                    display: flex;
+                }
+                .menu img
+                {
+                    align-self: center;
+                    height: 35%;
+                    cursor: pointer;
+                    display: none;
+                }
+                
+                /* Responsive Nav
+                @media (max-width : 900px) {
+                    .header_container
+                    {
+                        width: 98%;
+                    }
+                }*/
+                
+                @media (max-width : 950px) {
+                    .menu img 
+                    {
+                        display: block;
+                    }
+                    .navigation
+                    {
+                        display: grid;
+                        position: fixed;
+                        top: 9vh;
+                        left: -100vw;
+                        background-color: #404040;
+                        width: 100vw;
+                        height: 91%;
+                        align-items: center;
+                        transition: 0.6s left;
+                    }
+                    .navigation a
+                    {
+                        font-size: 2.5em;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        transition: 0.4s color;
+                        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                    }
+                    .navigation a:hover{
+                        background: none;
+                    }
+                    #burger:checked ~ .navigation
+                    {
+                        left: 0;
+                    }
+                    
+                }
+            </p>
+        </div>
+    </div>
+    
+</body>
+</html>
